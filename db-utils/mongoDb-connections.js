@@ -1,8 +1,11 @@
 import mongodb from "mongodb";
+import dotenv from 'dotenv'
+
+dotenv.config();
 
 const localDbUrl = "127.0.0.1:27017"
 const dbName = "fsd58we-tamil-task"
-const cloudUrl = "mongodb+srv://sriramsrk005:m3YyHyk4fFKV8AKl@cluster0.wtcfb.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const cloudUrl = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_CLUSTER}`;
 
 // local DB url
 // export const client = new mongodb.MongoClient(`mongodb://${localDbUrl}`)
